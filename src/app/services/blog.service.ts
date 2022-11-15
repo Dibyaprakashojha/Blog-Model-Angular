@@ -27,9 +27,9 @@ export class BlogService {
     return this._httpClient.delete(url, { responseType: 'text' });
   };
 
-  getBlogById = (blogId: number): Observable<object> => {
+  getBlogById = (blogId: number): Observable<BlogModel> => {
     let url = `${this._baseUrl}/getBlog/${blogId}`;
-    return this._httpClient.get<object>(url);
+    return this._httpClient.get<BlogModel>(url);
   };
 
   getAllBlogs = (): Observable<BlogModel> => {

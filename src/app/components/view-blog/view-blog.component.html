@@ -1,1 +1,8 @@
-<p>view-blog works!</p>
+<div class="single-container">
+    <mat-card>
+        <mat-card-subtitle>{{blogModel.blogId}}</mat-card-subtitle>
+        <mat-card-title>{{blogModel.blogTitle}}</mat-card-title>
+        <mat-card-subtitle>{{blogModel.blogContent}}</mat-card-subtitle>
+        <mat-card-subtitle><h3>{{blogModel.addedAtDate | date : 'longDate'}}</h3></mat-card-subtitle>
+    </mat-card>
+</div>

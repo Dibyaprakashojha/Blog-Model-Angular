@@ -1,1 +1,46 @@
-<p>edit-blog works!</p>
+<div class="form-group-container" style="text-align: center">
+    <h2>Update Blog</h2>
+    <form [formGroup]="blogUpdateForm" (ngSubmit)="editBlog(blogUpdateForm)" >
+        <mat-form-field appearance="outline">
+            <mat-label>Blog ID</mat-label>
+            <input matInput formControlName="blogId" [(ngModel)]="blogModel.blogId" readonly>
+          </mat-form-field>
+  
+          <br>
+
+      <mat-form-field appearance="outline" >
+          <mat-label>Blog Title</mat-label>
+          <input matInput type="text" formControlName="blogTitle" required 
+          [(ngModel)]="blogModel.blogTitle"
+          >
+          <div *ngIf="blogUpdateForm.controls['blogTitle'].invalid && (blogUpdateForm.controls['blogTitle'].dirty || blogUpdateForm.controls['blogTitle'].touched)">
+            <div class="warning" *ngIf="blogUpdateForm.controls['blogTitle'].errors" >
+              Blog Title is required.
+          </div>
+        </div>
+        </mat-form-field>
+
+        <br>
+        
+        <mat-form-field appearance="outline">
+          <mat-label >Blog Content</mat-label>
+          <textarea matInput formControlName="blogContent" required [(ngModel)]="blogModel.blogContent"></textarea>
+          <div *ngIf="blogUpdateForm.controls['blogContent'].invalid && (blogUpdateForm.controls['blogContent'].dirty || blogUpdateForm.controls['blogContent'].touched)">
+            <div class="warning" *ngIf="blogUpdateForm.controls['blogContent'].errors">
+              Blog Title is required.
+          </div>
+        </div>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="addedAtDate" [(ngModel)]="blogModel.addedAtDate" readonly >
+        </mat-form-field>
+
+        <br>
+
+        <button type="submit" mat-raised-button color="primary">UPDATE</button>
+    </form>
+</div>

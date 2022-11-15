@@ -6,11 +6,11 @@ import { HomeComponent } from './components/home/home.component';
 import { ViewBlogComponent } from './components/view-blog/view-blog.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'viewBlog/:blogId', component: ViewBlogComponent },
   { path: 'addBlog', component: AddBlogComponent },
   { path: 'editBlog/:blogId', component: EditBlogComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

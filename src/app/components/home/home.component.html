@@ -8,16 +8,15 @@
   <div class="blog-container">
     <mat-card *ngFor="let blog of blogList">
       <mat-card-title>{{blog.blogTitle}}</mat-card-title>
-      <!-- <mat-card-subtitle>{{blog.blogContent}}</mat-card-subtitle> -->
       <mat-card-subtitle style="color: black;">{{blog.addedAtDate}}</mat-card-subtitle>
       <mat-card-actions align="end">
         <button mat-icon-button color="warn" [routerLink]="['/viewBlog/',blog.blogId]">
           <mat-icon>visibility</mat-icon>
         </button>
-        <button mat-icon-button style="color: rgb(213, 213, 37);" [routerLink]="['/editBlog/',blog.blogId]">
+        <button mat-icon-button style="color: rgb(241, 241, 26);" [routerLink]="['/editBlog/',blog.blogId]">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-button style="color: rgb(38, 38, 148);" >
+        <button mat-button style="color: rgb(38, 38, 148);" (click)="deleteBlog(blog)">
           <mat-icon>delete_forever</mat-icon>
         </button>
       </mat-card-actions>
