@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="add-container">
+    Create a new Blog ? 
+    <button mat-raised-button  routerLink="/addBlog">
+      Click Here
+    </button>
+  </div>
+  <div class="blog-container">
+    <mat-card *ngFor="let blog of blogList">
+      <mat-card-title>{{blog.blogTitle}}</mat-card-title>
+      <!-- <mat-card-subtitle>{{blog.blogContent}}</mat-card-subtitle> -->
+      <mat-card-subtitle style="color: black;">{{blog.addedAtDate}}</mat-card-subtitle>
+      <mat-card-actions align="end">
+        <button mat-icon-button color="warn" [routerLink]="['/viewBlog/',blog.blogId]">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button style="color: rgb(213, 213, 37);" [routerLink]="['/editBlog/',blog.blogId]">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button style="color: rgb(38, 38, 148);" >
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

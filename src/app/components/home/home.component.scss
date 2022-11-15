@@ -1,0 +1,17 @@
+.add-container{
+    margin-top: 5px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    button{
+        margin-left: 10px;
+        background-color: rgb(43, 53, 233);
+    }
+}
+.mat-card{
+    margin: 20px 50px;
+    background-color: rgb(163, 161, 161);
+    color: black;
+}
