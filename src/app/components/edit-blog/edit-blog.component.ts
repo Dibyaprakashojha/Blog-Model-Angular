@@ -10,7 +10,7 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./edit-blog.component.scss'],
 })
 export class EditBlogComponent implements OnInit {
-  blogId: number = 0;
+  blogId!: number;
   blogModel!: BlogModel;
 
   editBlogForm!: BlogModel;
@@ -40,18 +40,20 @@ export class EditBlogComponent implements OnInit {
   }
 
   getBlogById = () => {
-    let id = this.blogId;
-    this._blogService.getBlogById(id).subscribe((data: BlogModel) => {
-      this.blogModel = data;
-      console.log('Data', data);
-    });
+    if (this.blogId != null) {
+      let id = this.blogId;
+      this._blogService.getBlogById(id).subscribe((data: BlogModel) => {
+        this.blogModel = data;
+        console.log('Data', data);
+      });
+    }
   };
 
   editBlog = (formValue: any) => {
-    this.blogModel.blogId = formValue.value.blogId;
-    this.blogModel.blogTitle = formValue.value.blogTitle;
-    this.blogModel.blogContent = formValue.value.blogContent;
-    this.blogModel.addedAtDate = formValue.value.addedAtDate;
+    this.blogModel.blogId = formValue.value?.blogId;
+    this.blogModel.blogTitle = formValue.value?.blogTitle;
+    this.blogModel.blogContent = formValue.value?.blogContent;
+    this.blogModel.addedAtDate = formValue.value?.addedAtDate;
     this.saveForm();
   };
 

@@ -2,7 +2,6 @@ import { BlogModel } from './../../models/blog-model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
@@ -20,11 +19,7 @@ export class AddBlogComponent implements OnInit {
   isSubmitted: boolean = false;
   currentDate = new Date();
 
-  constructor(
-    private _router: Router,
-    private _blogService: BlogService,
-    private _toastr: ToastrService
-  ) {}
+  constructor(private _router: Router, private _blogService: BlogService) {}
 
   ngOnInit(): void {
     this.isSubmitted = false;

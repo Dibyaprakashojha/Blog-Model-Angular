@@ -6,15 +6,6 @@ import { BlogService } from './services/blog.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'blog-model';
-
-  constructor(private _blogService: BlogService) {}
-
-  ngOnInit(): void {
-    // this._blogService.getAllBlogs().subscribe((data) => {
-    //   console.log('All blogs: ', data);
-    //   console.log('inside ngOnInit');
-    // });
-  }
 }

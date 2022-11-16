@@ -12,7 +12,7 @@ import { BlogService } from 'src/app/services/blog.service';
 export class HomeComponent implements OnInit {
   closeResult = '';
   blogList: BlogModel[] = [];
-  constructor(private _router: Router, private _blogService: BlogService) {}
+  constructor(private _blogService: BlogService) {}
 
   ngOnInit(): void {
     this.getBlogList();

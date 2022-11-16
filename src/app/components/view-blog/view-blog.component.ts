@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-blog.component.scss'],
 })
 export class ViewBlogComponent implements OnInit {
-  blogId: number = 0;
   blogModel!: BlogModel;
 
   constructor(
